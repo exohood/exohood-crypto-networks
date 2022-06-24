@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+    </parent>
+
+    <groupId>etherexport</groupId>
+    <artifactId>etherexport</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>txexport</module>
+        <module>eventscan</module>
+        <module>ethereum-rlp</module>
+        <module>ethereum-crypto</module>
+        <module>key-app</module>
+        <module>exohood-bot</module>
+        <module>scanner</module>
+        <module>joule</module>
+        <module>exohood-model</module>
+        <module>exohood-events</module>
+        <module>bot-integration</module>
+        <module>neo-cli4j</module>
+        <module>eos-cli4j</module>
+        <module>tron-cli4j</module>
+        <module>waves-cli4j</module>
+        <module>blockchain</module>
+        <module>blockchain-web3</module>
+        <module>blockchain-eos</module>
+        <module>blockchain-neo</module>
+        <module>blockchain-btc</module>
+        <module>blockchain-duc</module>
+        <module>blockchain-tron</module>
+        <module>blockchain-waves</module>
+        <module>blockchain-binance</module>
+        <module>exohood-airdrop</module>
+    </modules>
+
+    <properties>
+        <db-url>jdbc:postgresql://localhost/lastwill_new</db-url>
+        <!-- maven-compiler-plugin -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <java.version>1.8</java.version>
+
+        <web3j.version>4.5.5</web3j.version>
+        <httpclient.version>4.5.2</httpclient.version>
+        <postgresql.version>42.1.4</postgresql.version>
+        <spongycastle.version>1.58.0.0</spongycastle.version>
+        <rabbitmq.version>4.2.0</rabbitmq.version>
+        <bitcoinj.version>0.14.7</bitcoinj.version>
+        <ducatus.version>a9b21ab</ducatus.version>
+        <btcd-cli4j.version>0.6.6</btcd-cli4j.version>
+        <logstash-logback.version>5.1</logstash-logback.version>
+        <okhttp3.version>3.14.1</okhttp3.version>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <!--<dependency>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-api</artifactId>-->
+        <!--<version>1.7.25</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
